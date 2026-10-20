@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Testing caches
+.pytest_cache/
+
+# Environment and secrets
+.env
+.env.*
+
+# Benchmark results
+retry-bench/results/*.jsonl
+retry-bench/results/*.csv
+retry-bench/results/*.json
+!retry-bench/results/.gitkeep
+
+# Mock inputs and generated fixture data
+retry-bench/data/*.json
+retry-bench/bench/tasks.json

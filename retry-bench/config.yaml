@@ -1,0 +1,40 @@
+model: llama-3.3-70b-versatile
+temperature: 0
+max_tokens: 800
+max_steps: 8
+task_timeout_s: 60
+provider_max_retries: 5
+provider_retry_base_s: 1.0
+inter_call_delay_s: 0.15
+
+fault_rates:
+  transient: 0.10
+  validation: 0.08
+  permission: 0.04
+
+transient_latency_s:
+  min: 1.0
+  max: 2.0
+
+seeds: [1, 2, 3]
+
+retry:
+  naive:
+    max_attempts: 3
+    wait_s: 1.0
+  smart:
+    transient:
+      max_attempts: 3
+      base_s: 0.5
+      jitter: true
+      budget_s: 8
+    validation:
+      model_corrections: 2
+
+price_per_million_tokens:
+  groq:
+    input: 0.59
+    output: 0.79
+  claude_equivalent:
+    input: 3.00
+    output: 15.00

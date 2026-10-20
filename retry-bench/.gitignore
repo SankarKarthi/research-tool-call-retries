@@ -1,0 +1,19 @@
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+*.py[cod]
+
+# Secrets and environment
+.env
+.env.*
+
+# Benchmark outputs
+results/*.jsonl
+results/*.csv
+results/*.json
+!results/.gitkeep
+
+# Mock inputs and generated fixture data
+data/*.json
+bench/tasks.json
